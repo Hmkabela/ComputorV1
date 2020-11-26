@@ -1,4 +1,3 @@
-#!/usr/bin/ruby -w
 require_relative "Functions"
 if(ARGV.length != 1)
     abort("Too many or little arguments")
