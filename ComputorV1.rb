@@ -20,6 +20,9 @@ a = b = c = ""
 a = simplify(degree2)
 b = simplify(degree1)
 c = simplify(degree0)
+if a[0] == '0'
+    pd -= 1
+end
 if pd == 2
     puts "Reduced form: "+a+" + "+b+" + "+c+" = 0"
 elsif pd == 1
