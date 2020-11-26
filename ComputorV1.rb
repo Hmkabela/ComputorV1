@@ -22,6 +22,9 @@ def solve(arr1,arr2)
         else
             if arr1[i].include? "/"
                 div = arr1[i].split("/")
+                if div[1].to_f == 0
+                    abort(arr1[i] + " : Denominator is 0, Number is undefined")
+                end
                 arr1[i] = (div[0].to_f / div[1].to_f).to_s
             end
             arr1[i] = arr1[i] + arr2[i2]
@@ -53,6 +56,8 @@ def degree_sort(degree0,degree1,degree2,fin)
             degree1.append(fin[i])
         elsif d[1] == "2"
             degree2.append(fin[i])
+        elsif d[1].to_f < 0
+            abort("Cant have negative exponents")
         end
         if(d[1].to_i > pd)
             pd = d[1].to_i
@@ -86,10 +91,10 @@ def simplify(degree)
     return a
 end
 def sqroot(number)
-    error = 0.000001;#define the precision of your result
+    error = 0.000001;
     number = number.to_f
     s = number
-    while ((s-number/s) > error) #loop until precision satisfied
+    while ((s-number/s) > error)
         s = (s + number / s)/2
     end
     return s;
