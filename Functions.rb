@@ -1,4 +1,3 @@
-#!/usr/bin/ruby -w
 def solve(arr1,arr2)
     i = 0
     i2 = 1
